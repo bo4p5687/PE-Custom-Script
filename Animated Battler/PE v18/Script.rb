@@ -240,7 +240,7 @@ class PBAnimationPlayerX
 
 					# Change
 					sprite.src_rect.width = sprite.bitmap.height
-          
+
         when -2
           sprite.bitmap = @targetbitmap
 
@@ -316,7 +316,7 @@ def pbSpriteSetAnimFrame(sprite,frame,user=nil,target=nil,inEditor=false, speed=
 				srcx += sprite.src_rect.height
 				srcx  = 0 if srcx >= sprite.bitmap.width
 			end
-			x = AnimatedBattlers::Animated ? srcx : 0
+			x = AnimatedBattlers::Move ? srcx : 0
 		else
 			x = 0
 		end
