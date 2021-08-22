@@ -38,4 +38,10 @@ Set animated in battle
 
   + Speed -> Speed of this animated. After this times, graphic moves to other frame.
 
-  + First -> Use when pokemon use moves. If you set it true, pokemon that will show first frame use move
+  + First -> Use when pokemon faint. If you set it true, pokemon that will show first frame faint (case: not animated)
+
+  + Faint -> Set true and pokemon has animated when he faint.
+
+  + Move -> Set true and pokemon has animated when he use moves.
+
+  + SpeedMove -> Speed of this animated. After this times, graphic moves to other frame. (case: pokemon use moves)
