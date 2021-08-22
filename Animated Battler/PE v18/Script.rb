@@ -19,11 +19,21 @@ end
 
 # Animated pokemon
 module AnimatedBattlers
+	# If true, pokemon has animated (need to set true if you want animated when pokemon faint or use move)
 	Animated = true
 	# After 4 frames, it will change graphic (move to next frame)
 	Speed = 4
-	# First frames. If you set it true, pokemon that will show first frame use move
+
+	# First frames. If you set it true, pokemon that will show first frame when pokemon faint (case: not animated)
 	First = true
+	# Set true, pokemon fainted has animated
+	Faint = true
+
+	# Set true, when pokemon use move, pokemon has animated
+	Move = true
+	# After 4 frames, it will change graphic (move to next frame) - In case 'pokemon use move'
+	SpeedMove = 4
+
 end
 
 #===============================================================================
@@ -140,8 +150,17 @@ class PokemonBattlerSprite
 
 		# Set src_rect
 		if AnimatedBattlers::Animated
-			@speed_animated += 1
-			multi_frames if @speed_animated % AnimatedBattlers::Speed == 0
+			if faint && !AnimatedBattlers::Faint
+				@speed_animated = 0
+				firstFrame
+				self.src_rect.x = 0 if AnimatedBattlers::First
+			else
+				@speed_animated += 1
+				if @speed_animated % AnimatedBattlers::Speed == 0
+					firstFrame if faint
+					multi_frames
+				end
+			end
 		else
 			firstFrame
 		end
@@ -170,6 +189,12 @@ class PokemonBattlerSprite
 end
 
 class PBAnimationPlayerX
+	alias animated_init initialize
+	def initialize(animation,user,target,scene=nil,oppMove=false,inEditor=false)
+		animated_init(animation,user,target,scene,oppMove,inEditor)
+		@speed_animated_frames = 0
+	end
+
   def update
     return if @frame<0
     animFrame = @frame/@framesPerTick
@@ -213,22 +238,23 @@ class PBAnimationPlayerX
         when -1
           sprite.bitmap = @userbitmap
 
-          # Change
-          sprite.src_rect.width = sprite.src_rect.width
-					sprite.x = 0 if AnimatedBattlers::First
+					# Change
+					sprite.src_rect.width = sprite.bitmap.height
           
         when -2
           sprite.bitmap = @targetbitmap
 
-          # Change
-					sprite.src_rect.width = sprite.src_rect.width
-					sprite.x = 0 if AnimatedBattlers::First
+					# Change
+					sprite.src_rect.width = sprite.bitmap.height
 
         else
           sprite.bitmap = @animbitmap
         end
-        # Apply settings to the cel sprite
-        pbSpriteSetAnimFrame(sprite,cel,@usersprite,@targetsprite)
+
+        # Apply settings to the cel sprite -> new
+        pbSpriteSetAnimFrame(sprite,cel,@usersprite,@targetsprite, false, @speed_animated_frames)
+				@speed_animated_frames += 1
+
         case cel[AnimFrame::FOCUS]
         when 1   # Focused on target
           sprite.x = cel[AnimFrame::X]+@targetOrig[0]-PokeBattle_SceneConstants::FOCUSTARGET_X
@@ -260,11 +286,8 @@ class PBAnimationPlayerX
   end
 end
 
-def pbSpriteSetAnimFrame(sprite,frame,user=nil,target=nil,inEditor=false)
+def pbSpriteSetAnimFrame(sprite,frame,user=nil,target=nil,inEditor=false, speed=0)
   return if !sprite
-	# New
-	div = sprite.bitmap.width / sprite.bitmap.height if sprite.bitmap
-	# Old
   if !frame
     sprite.visible  = false
     sprite.src_rect = Rect.new(0,0,1,1)
@@ -286,11 +309,22 @@ def pbSpriteSetAnimFrame(sprite,frame,user=nil,target=nil,inEditor=false)
     sprite.src_rect.set((pattern%5)*animwidth,(pattern/5)*animwidth,
        animwidth,animwidth)
   else
-    sprite.src_rect.set(0,0,
+		# New
+		if sprite.bitmap
+			srcx = sprite.src_rect.x
+			if speed % AnimatedBattlers::SpeedMove == 0
+				srcx += sprite.src_rect.height
+				srcx  = 0 if srcx >= sprite.bitmap.width
+			end
+			x = AnimatedBattlers::Animated ? srcx : 0
+		else
+			x = 0
+		end
+		sprite.src_rect.set(x, 0,
 
-      # Change
-      (sprite.bitmap) ? sprite.src_rect.width : 128,
-      (sprite.bitmap) ? sprite.src_rect.height : 128)
+				# Change
+       (sprite.bitmap) ? sprite.src_rect.width : 128,
+       (sprite.bitmap) ? sprite.src_rect.height : 128)
 
   end
   sprite.zoom_x = frame[AnimFrame::ZOOMX]/100.0
@@ -432,6 +466,19 @@ module PokeBattle_BallAnimationMixin
 			sum -= 1
 		end
 		battler.setSrc(delay + 5 + 1 + div * RepeatAnimate::Pokemon, 0, 0)
+  end
+end
+
+class PokeBattle_Scene
+	def pbFrameUpdate(cw=nil)
+		cw.update if cw
+    # New
+		@battle.battlers.each_with_index { |b,i|
+			next if !b
+			@sprites["dataBox_#{i}"].update(@frameCounter) if @sprites["dataBox_#{i}"]
+			@sprites["pokemon_#{i}"].update(@frameCounter, b.fainted?) if @sprites["pokemon_#{i}"]
+			@sprites["shadow_#{i}"].update(@frameCounter) if @sprites["shadow_#{i}"]
+		}
   end
 end
 
