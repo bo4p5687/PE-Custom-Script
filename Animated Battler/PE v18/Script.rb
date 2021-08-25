@@ -123,6 +123,11 @@ class PokemonBattlerSprite
 		self.src_rect.width = self.src_rect.height = self.bitmap.height
 	end
 
+	def multi_frames
+		return if !self.bitmap
+		self.src_rect.x = self.src_rect.x + self.src_rect.height >= self.bitmap.width ? 0 : (self.src_rect.x + self.src_rect.height)
+	end
+
   def setPokemonBitmap(pkmn,back=false)
     @pkmn = pkmn
     @_iconBitmap.dispose if @_iconBitmap
@@ -141,7 +146,7 @@ class PokemonBattlerSprite
     self.oy = @_iconBitmap.height
   end
 
-	def update(frameCounter=0)
+	def update(frameCounter=0, faint=false)
     return if !@_iconBitmap
     @updating = true
     # Update bitmap
