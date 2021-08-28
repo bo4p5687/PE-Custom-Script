@@ -1,0 +1,1 @@
+Put `Graphics` in `Graphics\Pictures\HGSSPauseMenu`
