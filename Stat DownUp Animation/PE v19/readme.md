@@ -1,15 +1,15 @@
-# Choose file 
+# Choose file
 
 Choose one of 2 files, 'Stat Down - Up Animation (2 animations).rar' or 'Stat Down - Up Animation (8 animations).rar', for using.
 
 Puts the scripts in '\Plugins\Stat DownUp Animation'
 
+# Set SE (sound effect)
+You can set SE in this value `SE_PLAY`. It's name of file in folder `Audio\SE`
 
-
-# Addition 
+# Addition
 
 If you use 'Stat Down - Up Animation (8 animations).rb', you must change some lines.
-
 
 
 In BattleHandlers_Abilities, change...
