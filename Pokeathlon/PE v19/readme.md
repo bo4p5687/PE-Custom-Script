@@ -120,19 +120,19 @@ Now, after you finished minigame, this event returns 4 variables (here, you use 
 
 > It's score of each event. When result scene shows, you can see it in right screen.
 
-1. miss
+2. miss
 
 > It's array. Size is 12. Order is order you see in screen: from left to right and from up to down. (Pokemon)
 
 > It's `miss score`. You use it when you define `No-Miss Bonus` and `missed collecting the most points`.
 
-1. scorespecial
+3. scorespecial
 
 > It's array. Size is 4. Order is order you see in screen: from left to right.
 
 > It's score of each event. When result scene shows, you can see it in left screen. It's float or integer.
 
-1. scoreindividual
+4. scoreindividual
 
 > It's array. Size is 12. Order is order you see in screen: from left to right and from up to down. (Pokemon)
 
