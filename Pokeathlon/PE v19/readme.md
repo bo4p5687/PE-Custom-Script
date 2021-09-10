@@ -94,7 +94,7 @@ Look at examples in example maps.
 
 > In event 9, you can switch in condition and in `List of Event Commands:`
 
-1. Map (play pokeathlon)
+2. Map (play pokeathlon)
 
 > Look at left up corner, you can see event, set switch and transfer player in this
 
