@@ -14,5 +14,3 @@ Find in file `3 - Progress.rb`
 
 ### Modify the rest
 Find in file `1 - Set init.rb`. Read the first lines
-
-![example image](/image/https://imgur.com/Xgp26S4 "This is an example image.")
