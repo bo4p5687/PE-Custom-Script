@@ -10,7 +10,7 @@ You can add new region leader but you need to do:
 
 > You can see `SET` and you need to read comment line (line has #) to add right form.
 
-> You can see there are 8 lines. It's 8 leader. So, if you has new region (here, it's 2 region), you need to add 8 lines -> You have 16 lines
+> You can see there are 8 lines. It's 8 leaders. So, if you has new region (here, it's 2 regions), you need to add 8 lines -> You have 16 lines
 
 2. Look at file graphics
 
@@ -27,4 +27,4 @@ Example: `badges 0` -> It's badges you use in first region. So, the second is `b
 
 * File in folder `Trainers`
 
-It's files that you set in file `0 - Set trainer.rb`. You can add new or using same name. You can use multi frame (like example) or only one frame.
+It's files that you set in file `0 - Set trainer.rb`. You can add new or using same name. You can use multi frames (like example) or only one frame.
