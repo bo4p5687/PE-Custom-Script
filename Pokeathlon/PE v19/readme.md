@@ -5,7 +5,7 @@
 File in folder Pokeathlon -> Put it in `Graphics\Pokeathlon`
 File in folder Characters -> Put it in `Graphics\Characters`
 And you need to put files of pokemon in `Graphics\Characters`
-This is file you used with script Following Pokemon but it needs same size and each frame is 64.
+This is file you used graphics of script Following Pokemon (in same folder) but it needs same size and each frame is 64.
 So, these files have size 256 x 256
 ```
 * Files in Data
