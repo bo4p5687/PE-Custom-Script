@@ -2,7 +2,8 @@
 
 Choose one of 2 files, 'Stat Down - Up Animation (2 animations).rar' or 'Stat Down - Up Animation (8 animations).rar', for using.
 
-Puts the scripts in '\Plugins\Stat DownUp Animation'
+Puts `Scripts in` in `\Plugins\Stat DownUp Animation`
+Puts `Graphics.rar` in `\Graphics\Pictures\Stats Animation`
 
 # Set SE (sound effect)
 You can set SE in this value `SE_PLAY`. It's name of file in folder `Audio\SE`

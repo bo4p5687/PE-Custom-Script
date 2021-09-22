@@ -1,1 +1,0 @@
-Puts graphics in 'Graphics.rar' in '\Graphics\Pictures\Stats Animation'
