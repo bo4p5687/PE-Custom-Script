@@ -1,0 +1,1 @@
+Puts the scripts in 'Check Seasons like B2W2.rar' in '\Plugins\Check Seasons like B2W2'
