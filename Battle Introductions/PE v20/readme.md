@@ -1,0 +1,1 @@
+Puts the scripts in 'Battle Introductions.rar' in '\Plugins\Battle Introductions'
