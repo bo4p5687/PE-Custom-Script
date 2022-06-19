@@ -14,7 +14,7 @@ Find this command (ItemHandlers::UseOnPokemon) and add some lines for adding ani
 
 Example:
 
-#####0. TM/HM (special)
+##### 0. TM/HM (special)
 
 Find in Script editor
 
@@ -22,7 +22,7 @@ Find in Script editor
 
 Change `next 1 if pbMoveTutorChoose(move, nil, true, item_data.is_TR?)` into `next 1 if pbMoveTutorChoose(move, nil, true, item_data.is_TR?, item_data)`
 
-#####1. Evolution Stone (special)
+##### 1. Evolution Stone (special)
 
 Find in Script editor
 
@@ -36,7 +36,7 @@ add
       scene.endUseAnimations
 ```
 
-#####2. Item recover HP (`Potion`, `Max Potion`, etc) - (add new method)
+##### 2. Item recover HP (`Potion`, `Max Potion`, etc) - (add new method)
 
 Find something like
 
@@ -46,7 +46,7 @@ copy all in file `3 - Add animation (item).rb` and change line `next pbHPItem(pk
 
 You do like it such as `SUPERPOTION`, `HYPERPOTION`, etc. All items use `pbHPItem`, just add item before pkmn
 
-#####3. Item heals status (`Awakening`, `Antidote`, etc) - (add new method)
+##### 3. Item heals status (`Awakening`, `Antidote`, etc) - (add new method)
 
 Find something like
 
@@ -59,7 +59,7 @@ Above `pkmn.healStatus` add `scene.pbUseAnimations(item, pkmn)` and...
 Below something like `scene.pbDisplay(_INTL("{1} woke up.", pkmn.name))` add `scene.endUseAnimations`
 
 You do like it such as `ANTIDOTE`, `BURNHEAL`, etc. All items use `heal_status`.
-###### Items (different - a little)
+###### * Items (different - a little) *
 
 `Max revive`
 
@@ -75,7 +75,7 @@ copy all in file `3 - Add animation (item).rb` and above `pkmn.healHP` add `scen
 
 Do this with item like `Max revive` (the items have `pkmn.heal_HP`)
 
-#####4. Item recover PP (`Ether`, `Max ether`, etc) - (add new method)
+##### 4. Item recover PP (`Ether`, `Max ether`, etc) - (add new method)
 
 Find something like
 
@@ -87,7 +87,7 @@ copy all in file `3 - Add animation (item).rb` and above `scene.pbDisplay(_INTL(
 
 You do like it such as `Elixir`, `Max elixir`, etc.
 
-###### Items (different - a little)
+###### * Items (different - a little) *
 `PP Up`
 
 Find something like
@@ -98,7 +98,7 @@ copy all in file `3 - Add animation (item).rb` and above `pkmn.moves[move].ppup 
 
 ...below `scene.pbDisplay(_INTL("{1}'s PP increased.",movename))` add `scene.endUseAnimations`
 
-#####5. Other Items
+##### 5. Other Items
 
 You need to do like this tip:
 
