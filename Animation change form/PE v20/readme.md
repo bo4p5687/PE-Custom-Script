@@ -1,7 +1,7 @@
 # Scripts
 Puts `Scripts` in `Plugins\Animation change form`
 
-## If you use my script: Animation "item", you need to read these lines below
+## If you use script: Animation "item", you need to read these lines below
 Read this line: "Add for using animation item" in file `2 - Rewrite`
 Do like guide.
 Thanks!

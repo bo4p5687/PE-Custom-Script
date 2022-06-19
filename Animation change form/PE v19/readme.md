@@ -1,6 +1,6 @@
 # Scripts
 Puts `Scripts` in `Plugins\Animation change form`
-## My script `Animation use item`
+## Script `Animation use item`
 ### If you use it
 1. Change name if plugin `Animation use item` will load before this plugin loads.
 1. In file `3 - Add animation.rb`, you need to add `animation use item` like normal and then add `animation change form`
