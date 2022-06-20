@@ -32,10 +32,14 @@ Look at examples and write like that, you have to add all values and read carefu
 
 ### Second, after adding informations, set it true if you want to see
 
-Main information of `famous person` -> Call: FameChecker.seenList(`name`) -> `name` is value that you added in `FameChecker.list(name, hash)`
+* Main information of `famous person` -> Call: FameChecker.seenList(`name`)
 
-Minor information of `famous person` -> Call: FameChecker.seenInfor(`name`, `number`)
 -> `name` is value that you added in `FameChecker.list(name, hash)`
+
+* Minor information of `famous person` -> Call: FameChecker.seenInfor(`name`, `number`)
+
+-> `name` is value that you added in `FameChecker.list(name, hash)`
+
 -> `number` is order when you set `FameChecker.infor`, maximum is `5` and minimum is `0`
 
 ### Third
@@ -46,7 +50,9 @@ Call:
 FameChecker.changeList(name, feature, "#{$player.name}")
 ```
 -> `name` is value that you added in `FameChecker.list(name, hash)`
+
 -> `feature` is `:name`, `:graphic`, `:order`, `:introduce` but in this case, you need to write `:name`
+
 -> the third part is player's name. (It's examples. It's like `new_thing` in example below)
 
 You can change informations of `famous person`.
@@ -54,13 +60,17 @@ You can change informations of `famous person`.
 Just like, in manga, Red met Giovanni in the first time, he is a miner (I think) but next time, he is Leader of team Rocket and Gym Leader.
 
 * When you want to change minor informations in game, do like it.
+
 Call:
 ```
 FameChecker.changeInfor(name, feature, new_thing, position)
 ```
 -> `name` is value that you added in `FameChecker.list(name, hash)`
+
 -> `feature` is `:title`, `:graphic`, `:introduce` but in this case, you need to write `:name`
+
 -> `new_thing` is content compatible with feature. When it isn't compatible, you will get error.
+
 -> `position` is position of minor information, minimum is 0 and maximum is 5
 
 ## Attention
