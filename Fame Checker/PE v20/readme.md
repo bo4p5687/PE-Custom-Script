@@ -18,7 +18,7 @@ FieldUse = Direct
 Description = A device that enables you to recall what you've heard and seen about famous people.
 ```
 
-1. Call: FameChecker.show
+2. Call: FameChecker.show
 
 ## How to use
 ### First
