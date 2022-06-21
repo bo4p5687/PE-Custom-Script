@@ -3,10 +3,10 @@ Take `graphics` in PE v19 and read `readme`.
 Put `Script` in `\Plugins\Gender selection (style SM)`
 
 # How to use
-Put portrait of players in '\Pictures\GenderSelection', each picture has size 100 x 100
+Put portrait of players in '\Pictures\GenderSelection', each picture has size `100px x 100px`
 
 ### Call script
-`GenderPickSelection.show`
+Call: `GenderPickSelection.show`. Change this with event `choose gender`
 
 #### Name of pictures:
 Look at these values in files `1 - Script.rb`:
