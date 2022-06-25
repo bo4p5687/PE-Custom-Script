@@ -1,5 +1,5 @@
 ## How to use:
-Puts files in `Mach and acro bike` to `\Plugins\Mach and acro bike`
+Puts files in `Mach and acro bike` in `\Plugins\Mach and acro bike`
 
 #### Character changes outfit
 Look at file `1 - Mach and Acro bike.rb`, there are `ACRO_BIKE = [...]` and `MACH_BIKE = [...]`.
