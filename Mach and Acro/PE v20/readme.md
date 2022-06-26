@@ -1,6 +1,29 @@
 ## How to use:
 Puts files in `Mach and acro bike` in `\Plugins\Mach and acro bike`
 
+#### Add new items: Acro bike and mach bike
+Add in file `items` in `PBS folder` like these lines below
+```
+#-------------------------------
+[ACROBIKE]
+Name = Acro bike
+NamePlural = Acro bike
+Pocket = 8
+Price = 0
+FieldUse = Direct
+Flags = KeyItem
+Description = Acro Bike.
+#-------------------------------
+[MACHBIKE]
+Name = Mach bike
+NamePlural = Mach bike
+Pocket = 8
+Price = 0
+FieldUse = Direct
+Flags = KeyItem
+Description = Mach Bike.
+```
+
 #### Character changes outfit
 Look at file `1 - Mach and Acro bike.rb`, there are `ACRO_BIKE = [...]` and `MACH_BIKE = [...]`.
 
