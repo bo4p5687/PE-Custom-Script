@@ -53,13 +53,13 @@ If you set wrong, you will get error.
 
 - `setRulesPoffin("expert", 30)`
 
-* The other example: `2 experts`, `1 newbie`
+The other example: `2 experts`, `1 newbie`
 
 - `setRulesPoffin("newbie", 20)`
 
 - `setRulesPoffin("expert", 55)`
 
-* The other example: in mode `3 players, 1 newbie, 1 oldbie` (The distance is 50 for 1 player)
+The other example: in mode `3 players, 1 newbie, 1 oldbie` (The distance is 50 for 1 player)
 
 - `setRulesPoffin("newbie", 25)`
 
@@ -82,7 +82,7 @@ In file `2 - Init.rb` of folder `2 - Play poffin`, you can find some numbers: `R
 
 The lines below `LimitScale` is the time when you finish.
 
-##### Attention:
+##### Attention
 If you want to change it, you need to change the AI too. Maybe, I set AI not good but you need to read the script and rewrite it if you want to change
 
 And, the value `MaxPoffin = [true, 999]`
