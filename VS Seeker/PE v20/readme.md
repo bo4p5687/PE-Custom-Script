@@ -93,3 +93,6 @@ When `MAX_PARTY_SIZE` is higher than 6, party of opposite can higher.
 
 - `STORE`
 > When you want to store party of opposite trainer in next time, set `STORE = true`.
+
+- `ONLY_VS_SEEKER`
+> When `ONLY_VS_SEEKER = true`, player can't battle trainer who is on edge when he isn't re-match
